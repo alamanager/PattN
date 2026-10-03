@@ -18,7 +18,11 @@ public sealed class AetherService
 
     public static string SocksAddress(Models.Configs.AetherItem item)
     {
-        return NormalizeBind(item.BindAddress);
+        // Display form: an unspecified bind is real for the core but useless
+        // to clients, so it maps to loopback (the --bind flag itself keeps
+        // 0.0.0.0 for LAN sharing).
+        var (host, port) = SplitHostPort(NormalizeBind(item.BindAddress));
+        return $"{host}:{port}";
     }
 
     public static string HttpAddress(Models.Configs.AetherItem item)

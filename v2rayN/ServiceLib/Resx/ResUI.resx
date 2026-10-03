@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -1934,5 +1934,20 @@ The "Get Certificate" action may fail if a self-signed certificate is used or if
   </data>
   <data name="MsgEchOutboundTagConflict" xml:space="preserve">
     <value>The tag "{0}" of EchOutbound is already used by another outbound</value>
+  </data>
+  <data name="AetherConnect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="AetherTabTitle" xml:space="preserve">
+    <value>Aether</value>
+  </data>
+  <data name="AetherDisconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="AetherStopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="AetherStarting" xml:space="preserve">
+    <value>Starting Aether…</value>
   </data>
 </root>

@@ -5507,5 +5507,35 @@ namespace ServiceLib.Resx {
                 return ResourceManager.GetString("UpgradeAppNotExistTip", resourceCulture);
             }
         }
+        
+        public static string AetherTabTitle {
+            get {
+                return ResourceManager.GetString("AetherTabTitle", resourceCulture);
+            }
+        }
+        
+        public static string AetherConnect {
+            get {
+                return ResourceManager.GetString("AetherConnect", resourceCulture);
+            }
+        }
+        
+        public static string AetherDisconnect {
+            get {
+                return ResourceManager.GetString("AetherDisconnect", resourceCulture);
+            }
+        }
+        
+        public static string AetherStarting {
+            get {
+                return ResourceManager.GetString("AetherStarting", resourceCulture);
+            }
+        }
+        
+        public static string AetherStopped {
+            get {
+                return ResourceManager.GetString("AetherStopped", resourceCulture);
+            }
+        }
     }
 }

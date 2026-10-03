@@ -10,6 +10,7 @@ public class SimpleViewLocator : IViewLocator
 
     private SimpleViewLocator()
     {
+        Register<AetherViewModel, AetherView>();
         Register<AddGroupServerViewModel, AddGroupServerWindow>();
         Register<AddServer2ViewModel, AddServer2Window>();
         Register<AddServerViewModel, AddServerWindow>();

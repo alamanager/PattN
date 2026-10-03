@@ -372,6 +372,9 @@ public partial class MainWindow
                 this.WhenAnyValue(v => v.ViewModel.ProfilesViewModel)
                     .Subscribe(vm => ViewHost.Show(tabProfiles, vm))
                     .DisposeWith(currentLayoutDisposables);
+                this.WhenAnyValue(v => v.ViewModel.AetherViewModel)
+                    .Subscribe(vm => ViewHost.Show(tabAether, vm))
+                    .DisposeWith(currentLayoutDisposables);
                 this.WhenAnyValue(v => v.ViewModel.MsgViewModel)
                     .Subscribe(vm => ViewHost.Show(tabMsgView, vm))
                     .DisposeWith(currentLayoutDisposables);
@@ -390,6 +393,9 @@ public partial class MainWindow
             case EGirdOrientation.Vertical:
                 this.WhenAnyValue(v => v.ViewModel.ProfilesViewModel)
                     .Subscribe(vm => ViewHost.Show(tabProfiles1, vm))
+                    .DisposeWith(currentLayoutDisposables);
+                this.WhenAnyValue(v => v.ViewModel.AetherViewModel)
+                    .Subscribe(vm => ViewHost.Show(tabAether1, vm))
                     .DisposeWith(currentLayoutDisposables);
                 this.WhenAnyValue(v => v.ViewModel.MsgViewModel)
                     .Subscribe(vm => ViewHost.Show(tabMsgView1, vm))
@@ -410,6 +416,9 @@ public partial class MainWindow
             default:
                 this.WhenAnyValue(v => v.ViewModel.ProfilesViewModel)
                     .Subscribe(vm => ViewHost.Show(tabProfiles2, vm))
+                    .DisposeWith(currentLayoutDisposables);
+                this.WhenAnyValue(v => v.ViewModel.AetherViewModel)
+                    .Subscribe(vm => ViewHost.Show(tabAether2, vm))
                     .DisposeWith(currentLayoutDisposables);
                 this.WhenAnyValue(v => v.ViewModel.MsgViewModel)
                     .Subscribe(vm => ViewHost.Show(tabMsgView2, vm))

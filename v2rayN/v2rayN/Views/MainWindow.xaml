@@ -347,6 +347,7 @@
                             x:Name="tabMain"
                             Grid.Column="2"
                             HorizontalContentAlignment="Left">
+                            <TabItem x:Name="tabAether" Header="{x:Static resx:ResUI.AetherTabTitle}" />
                             <TabItem x:Name="tabMsgView" Header="{x:Static resx:ResUI.MsgInformationTitle}" />
                             <TabItem x:Name="tabClashProxies" Header="{x:Static resx:ResUI.TbProxies}" />
                             <TabItem x:Name="tabClashConnections" Header="{x:Static resx:ResUI.TbConnections}" />
@@ -366,6 +367,17 @@
                             materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
                             Style="{StaticResource MaterialDesignNavigationRailTabControl}"
                             TabStripPlacement="Left">
+                            <TabItem x:Name="tabAether1">
+                                <TabItem.Header>
+                                    <StackPanel>
+                                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ShieldLock" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            Style="{StaticResource ToolbarTextBlock}"
+                                            Text="{x:Static resx:ResUI.AetherTabTitle}" />
+                                    </StackPanel>
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="tabMsgView1">
                                 <TabItem.Header>
                                     <StackPanel>
@@ -407,6 +419,17 @@
                             materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
                             Style="{StaticResource MaterialDesignNavigationRailTabControl}"
                             TabStripPlacement="Left">
+                            <TabItem x:Name="tabAether2">
+                                <TabItem.Header>
+                                    <StackPanel>
+                                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ShieldLock" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            Style="{StaticResource ToolbarTextBlock}"
+                                            Text="{x:Static resx:ResUI.AetherTabTitle}" />
+                                    </StackPanel>
+                                </TabItem.Header>
+                            </TabItem>
                             <TabItem x:Name="tabProfiles2">
                                 <TabItem.Header>
                                     <StackPanel>

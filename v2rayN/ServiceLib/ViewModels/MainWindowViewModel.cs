@@ -11,6 +11,7 @@ public partial class MainWindowViewModel : MyReactiveObject
 
     public ProfilesViewModel ProfilesViewModel { get; } = new();
     public MsgViewModel MsgViewModel { get; } = new();
+    public AetherViewModel AetherViewModel { get; } = new();
     public ClashProxiesViewModel ClashProxiesViewModel { get; } = new();
     public ClashConnectionsViewModel ClashConnectionsViewModel { get; } = new();
     public CheckUpdateViewModel CheckUpdateViewModel { get; } = new();

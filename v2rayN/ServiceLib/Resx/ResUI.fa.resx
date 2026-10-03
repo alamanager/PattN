@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -1808,5 +1808,20 @@ The "Get Certificate" action may fail if a self-signed certificate is used or if
   </data>
   <data name="MsgEchOutboundTagConflict" xml:space="preserve">
     <value>تگ "{0}" در EchOutbound قبلاً توسط outbound دیگری استفاده شده است</value>
+  </data>
+  <data name="AetherConnect" xml:space="preserve">
+    <value>اتصال</value>
+  </data>
+  <data name="AetherTabTitle" xml:space="preserve">
+    <value>ایثر</value>
+  </data>
+  <data name="AetherDisconnect" xml:space="preserve">
+    <value>قطع</value>
+  </data>
+  <data name="AetherStopped" xml:space="preserve">
+    <value>متوقف شد</value>
+  </data>
+  <data name="AetherStarting" xml:space="preserve">
+    <value>در حال شروع ایثر…</value>
   </data>
 </root>
