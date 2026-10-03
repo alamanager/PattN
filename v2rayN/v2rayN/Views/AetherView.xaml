@@ -8,44 +8,156 @@
     xmlns:reactiveui="http://reactiveui.net"
     xmlns:resx="clr-namespace:ServiceLib.Resx;assembly=ServiceLib"
     xmlns:vms="clr-namespace:ServiceLib.ViewModels;assembly=ServiceLib"
-    d:DesignHeight="600"
-    d:DesignWidth="500"
+    d:DesignHeight="700"
+    d:DesignWidth="520"
     x:TypeArguments="vms:AetherViewModel"
     Style="{StaticResource ViewGlobal}"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <Storyboard x:Key="PulseRing" RepeatBehavior="Forever">
+            <DoubleAnimation
+                Storyboard.TargetName="pulseRing"
+                Storyboard.TargetProperty="(Ellipse.RenderTransform).(ScaleTransform.ScaleX)"
+                From="0.85"
+                To="1.12"
+                Duration="0:0:2.4" />
+            <DoubleAnimation
+                Storyboard.TargetName="pulseRing"
+                Storyboard.TargetProperty="(Ellipse.RenderTransform).(ScaleTransform.ScaleY)"
+                From="0.85"
+                To="1.12"
+                Duration="0:0:2.4" />
+            <DoubleAnimation
+                Storyboard.TargetName="pulseRing"
+                Storyboard.TargetProperty="Opacity"
+                From="0.55"
+                To="0.0"
+                Duration="0:0:2.4" />
+        </Storyboard>
+        <Storyboard x:Key="EnterCard0">
+            <DoubleAnimation
+                BeginTime="0:0:0"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.35" />
+        </Storyboard>
+        <Storyboard x:Key="EnterCard1">
+            <DoubleAnimation
+                BeginTime="0:0:0.07"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.35" />
+        </Storyboard>
+        <Storyboard x:Key="EnterCard2">
+            <DoubleAnimation
+                BeginTime="0:0:0.14"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.35" />
+        </Storyboard>
+        <Storyboard x:Key="EnterCard3">
+            <DoubleAnimation
+                BeginTime="0:0:0.21"
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.35" />
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource PulseRing}" />
+        </EventTrigger>
+    </UserControl.Triggers>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="{StaticResource Margin8}">
-            <materialDesign:Card Margin="{StaticResource Margin4}" Padding="16">
-                <StackPanel>
-                    <TextBlock
-                        Style="{StaticResource ModuleTitle}"
-                        Text="{x:Static resx:ResUI.AetherTabTitle}" />
-                    <TextBlock
-                        x:Name="txtStatus"
-                        Margin="0,8,0,8"
-                        TextWrapping="Wrap" />
-                    <TextBlock x:Name="txtEndpoints" TextWrapping="Wrap" />
-                    <WrapPanel Margin="0,12,0,0">
-                        <Button
-                            x:Name="btnConnect"
-                            MinWidth="140"
-                            Margin="{StaticResource MarginLeftRight8}"
-                            Content="{x:Static resx:ResUI.AetherConnect}"
-                            Style="{StaticResource DefButton}" />
-                        <Button
-                            x:Name="btnDisconnect"
-                            MinWidth="140"
-                            Margin="{StaticResource MarginLeftRight8}"
-                            Content="{x:Static resx:ResUI.AetherDisconnect}"
-                            Style="{StaticResource DefButton}" />
-                    </WrapPanel>
-                </StackPanel>
+            <materialDesign:Card
+                Margin="{StaticResource Margin4}"
+                Padding="20,16"
+                materialDesign:ElevationAssist.Elevation="Dp4">
+                <materialDesign:Card.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource EnterCard0}" />
+                    </EventTrigger>
+                </materialDesign:Card.Triggers>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        Width="112"
+                        Height="112"
+                        Margin="0,0,16,0">
+                        <Ellipse
+                            x:Name="pulseRing"
+                            Stroke="#22C55E"
+                            StrokeThickness="2"
+                            RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform ScaleX="0.85" ScaleY="0.85" />
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Offset="0" Color="#1E3A5F" />
+                                    <GradientStop Offset="1" Color="#0F172A" />
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <materialDesign:PackIcon
+                            Width="44"
+                            Height="44"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="#22C55E"
+                            Kind="Power" />
+                    </Grid>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock
+                            FontSize="17"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Text="Aether" />
+                        <TextBlock
+                            x:Name="txtStatus"
+                            Margin="0,4,0,4"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            x:Name="txtEndpoints"
+                            FontFamily="Consolas"
+                            FontSize="11"
+                            TextWrapping="Wrap" />
+                        <WrapPanel Margin="0,10,0,0">
+                            <Button
+                                x:Name="btnConnect"
+                                MinWidth="120"
+                                Margin="0,0,8,0"
+                                Content="{x:Static resx:ResUI.AetherConnect}"
+                                Style="{StaticResource DefButton}" />
+                            <Button
+                                x:Name="btnDisconnect"
+                                MinWidth="120"
+                                Content="{x:Static resx:ResUI.AetherDisconnect}"
+                                Style="{StaticResource DefButton}" />
+                        </WrapPanel>
+                    </StackPanel>
+                </Grid>
             </materialDesign:Card>
 
             <GroupBox
                 Margin="{StaticResource Margin4}"
                 Header="Transport"
                 Style="{StaticResource MyGroupBox}">
+                <GroupBox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource EnterCard1}" />
+                    </EventTrigger>
+                </GroupBox.Triggers>
                 <StackPanel>
                     <ComboBox
                         x:Name="cmbProtocol"
@@ -84,6 +196,11 @@
                 Margin="{StaticResource Margin4}"
                 Header="Network"
                 Style="{StaticResource MyGroupBox}">
+                <GroupBox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource EnterCard2}" />
+                    </EventTrigger>
+                </GroupBox.Triggers>
                 <StackPanel>
                     <ComboBox
                         x:Name="cmbIpVersion"
@@ -130,6 +247,11 @@
                 Margin="{StaticResource Margin4}"
                 Header="System proxy"
                 Style="{StaticResource MyGroupBox}">
+                <GroupBox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource EnterCard3}" />
+                    </EventTrigger>
+                </GroupBox.Triggers>
                 <StackPanel>
                     <CheckBox
                         x:Name="togSysProxy"

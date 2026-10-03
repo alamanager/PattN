@@ -336,10 +336,24 @@
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                             <GradientStop Offset="0" Color="#0F172A" />
-                            <GradientStop Offset="0.55" Color="#1E3A5F" />
+                            <GradientStop x:Name="bandGlow" Offset="0.55" Color="#1E3A5F" />
                             <GradientStop Offset="1" Color="#0F172A" />
                         </LinearGradientBrush>
                     </Border.Background>
+                    <Border.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="bandGlow"
+                                        Storyboard.TargetProperty="Offset"
+                                        From="0.45"
+                                        To="0.65"
+                                        Duration="0:0:7" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
                     <DockPanel Margin="16,0" VerticalAlignment="Center">
                         <materialDesign:PackIcon
                             Width="22"
