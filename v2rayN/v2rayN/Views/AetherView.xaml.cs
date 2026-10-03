@@ -8,6 +8,15 @@ public partial class AetherView
 
         this.WhenActivated(disposables =>
         {
+            cmbProtocol.ItemsSource = ViewModel?.ProtocolOptions;
+            cmbScanMode.ItemsSource = ViewModel?.ScanOptions;
+            cmbIpVersion.ItemsSource = ViewModel?.IpOptions;
+            cmbMasqueNoize.ItemsSource = ViewModel?.NoizeMasqueOptions;
+            cmbWgNoize.ItemsSource = ViewModel?.NoizeWgOptions;
+            cmbExtraTransport.ItemsSource = ViewModel?.ExtraTransportOptions;
+            cmbPsiphonRegion.ItemsSource = ViewModel?.PsiphonRegionOptions;
+            cmbPsiphonMode.ItemsSource = ViewModel?.PsiphonModeOptions;
+
             this.BindCommand(ViewModel, vm => vm.ConnectCmd, v => v.btnConnect).DisposeWith(disposables);
             this.BindCommand(ViewModel, vm => vm.DisconnectCmd, v => v.btnDisconnect).DisposeWith(disposables);
 
@@ -30,14 +39,5 @@ public partial class AetherView
             this.Bind(ViewModel, vm => vm.TorBridges, v => v.togTorBridges.IsChecked).DisposeWith(disposables);
             this.Bind(ViewModel, vm => vm.SysProxyOn, v => v.togSysProxy.IsChecked).DisposeWith(disposables);
         });
-
-        cmbProtocol.ItemsSource = ViewModel?.ProtocolOptions;
-        cmbScanMode.ItemsSource = ViewModel?.ScanOptions;
-        cmbIpVersion.ItemsSource = ViewModel?.IpOptions;
-        cmbMasqueNoize.ItemsSource = ViewModel?.NoizeMasqueOptions;
-        cmbWgNoize.ItemsSource = ViewModel?.NoizeWgOptions;
-        cmbExtraTransport.ItemsSource = ViewModel?.ExtraTransportOptions;
-        cmbPsiphonRegion.ItemsSource = ViewModel?.PsiphonRegionOptions;
-        cmbPsiphonMode.ItemsSource = ViewModel?.PsiphonModeOptions;
     }
 }
