@@ -687,6 +687,7 @@ public class Global
         { ECoreType.overtls, "ShadowsocksR-Live/overtls" },
         { ECoreType.shadowquic, "spongebob888/shadowquic" },
         { ECoreType.mieru, "enfein/mieru" },
+        { ECoreType.aether, "CluvexStudio/Aether" },
         { ECoreType.v2rayN, "patterniha/PattN" },
     };
 

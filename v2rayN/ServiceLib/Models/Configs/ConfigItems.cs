@@ -301,3 +301,22 @@ public class HappyEyeballs4RayItem
     public int? Interleave { get; set; }
     public int? MaxConcurrentTry { get; set; }
 }
+
+[Serializable]
+public class AetherItem
+{
+    public string Protocol { get; set; } = "auto";
+    public string ScanMode { get; set; } = "balanced";
+    public string IpVersion { get; set; } = "v4";
+    public bool QuickReconnect { get; set; } = true;
+    public bool MasqueHttp2 { get; set; }
+    public string MasqueNoize { get; set; } = "firewall";
+    public string WgNoize { get; set; } = "balanced";
+    public string BindAddress { get; set; } = "127.0.0.1:1819";
+    public string Dns { get; set; } = string.Empty;
+    public string Upstream { get; set; } = string.Empty;
+    public string ExtraTransport { get; set; } = "none";
+    public bool TorBridges { get; set; }
+    public string PsiphonRegion { get; set; } = string.Empty;
+    public string PsiphonMode { get; set; } = "auto";
+}

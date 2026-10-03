@@ -187,6 +187,7 @@ public static class ConfigHandler
             Interleave = 1,
             MaxConcurrentTry = 4,
         };
+        config.AetherItem ??= new();
         if ((config.Fragment4RayItem.Lengths ?? []).Count == 0)
         {
             config.Fragment4RayItem.Lengths = [config.Fragment4RayItem.Length ?? "50-100"];
