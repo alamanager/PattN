@@ -10,7 +10,7 @@
     xmlns:resx="clr-namespace:ServiceLib.Resx;assembly=ServiceLib"
     xmlns:view="clr-namespace:v2rayN.Views"
     xmlns:vms="clr-namespace:ServiceLib.ViewModels;assembly=ServiceLib"
-    Title="PattN"
+    Title="AetherNX"
     Width="1200"
     Height="800"
     MinWidth="800"
@@ -331,6 +331,37 @@
                             Visibility="Hidden" />
                     </ToolBar>
                 </ToolBarTray>
+
+                <Border Height="46" DockPanel.Dock="Top">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Offset="0" Color="#0F172A" />
+                            <GradientStop Offset="0.55" Color="#1E3A5F" />
+                            <GradientStop Offset="1" Color="#0F172A" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <DockPanel Margin="16,0" VerticalAlignment="Center">
+                        <materialDesign:PackIcon
+                            Width="22"
+                            Height="22"
+                            VerticalAlignment="Center"
+                            Foreground="#22C55E"
+                            Kind="ShieldLock" />
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="17"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Text="AetherNX" />
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="11"
+                            Foreground="#94A3B8"
+                            Text="V2Ray · Aether · Tor · Psiphon" />
+                    </DockPanel>
+                </Border>
 
                 <ContentControl x:Name="contentStatusBarView" DockPanel.Dock="Bottom" />
 

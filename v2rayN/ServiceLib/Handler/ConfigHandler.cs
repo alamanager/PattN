@@ -105,6 +105,14 @@ public static class ConfigHandler
         config.UiItem ??= new();
         config.UiItem.MainColumnItem ??= [];
         config.UiItem.WindowSizeItem ??= [];
+        if (config.UiItem.CurrentTheme.IsNullOrEmpty())
+        {
+            config.UiItem.CurrentTheme = nameof(ETheme.Dark);
+        }
+        if (config.UiItem.ColorPrimaryName.IsNullOrEmpty())
+        {
+            config.UiItem.ColorPrimaryName = "DeepOrange";
+        }
 
         if (config.UiItem.CurrentLanguage.IsNullOrEmpty())
         {

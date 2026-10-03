@@ -12,8 +12,8 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<CETCompat>false</CETCompat>
 		<AssemblyName>PattN</AssemblyName>
-		<AssemblyTitle>PattN</AssemblyTitle>
-		<Product>PattN</Product>
+		<AssemblyTitle>AetherNX</AssemblyTitle>
+		<Product>AetherNX</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
